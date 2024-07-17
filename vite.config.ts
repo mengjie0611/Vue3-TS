@@ -1,10 +1,3 @@
-/*
- * @Description: Stay hungry，Stay foolish
- * @Author: Huccct
- * @Date: 2023-05-17 14:32:02
- * @LastEditors: Huccct
- * @LastEditTime: 2023-06-02 17:37:30
- */
 import { ConfigEnv, UserConfigExport, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -19,7 +12,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   // 获取各种环境下对应的变量
-  let env = loadEnv(mode, process.cwd())
+  const env = loadEnv(mode, process.cwd())
   return {
     base: './',
     plugins: [
