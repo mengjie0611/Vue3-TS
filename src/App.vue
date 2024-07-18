@@ -1,13 +1,25 @@
 <template>
-  <!-- <el-button type="primary">按钮</el-button> -->
-  <Svgicon iconName="home" width="100px" height="100px" color="red"></Svgicon>
+  <Svgicon
+    :iconName="svgInfo.iconName"
+    :width="svgInfo.width"
+    :height="svgInfo.height"
+    :color="svgInfo.color"
+  ></Svgicon>
+  <el-button @click="changeSvg">点我换图</el-button>
 </template>
 <script setup lang="ts">
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import { ref } from 'vue'
 import Svgicon from '@/components/Svgicon.vue'
+import { ref } from 'vue'
+let svgInfo = ref({
+  iconName: 'home',
+  width: '100px',
+  height: '100px',
+  color: 'red',
+})
 
-const locale = ref(zhCn)
-console.log(locale.value)
+function changeSvg() {
+  svgInfo.value.iconName = 'collapse'
+  svgInfo.value.color = 'blue'
+}
 </script>
 <style scoped lang="scss"></style>
